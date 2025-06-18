@@ -5,6 +5,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { CoursesComponent } from './courses/courses.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
 
   const routes: Routes = [
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -13,6 +14,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'courses', component: CoursesComponent },
+  { path: 'courses/course/:id', component: CourseDetailComponent },
+
   { path: '**', component: NotfoundComponent } // fallback route
 ];
 
