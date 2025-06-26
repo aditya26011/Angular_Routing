@@ -7,6 +7,7 @@ import { CoursesComponent } from './courses/courses.component';
 import { NotfoundComponent } from './notfound/notfound.component';
 import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
 import { PopularComponent } from './home/popular/popular.component';
+import { LoginComponent } from './login/login.component';
 
   const routes: Routes = [
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,8 +19,9 @@ import { PopularComponent } from './home/popular/popular.component';
   // { path: 'courses/course/:id', component: CourseDetailComponent },
   {path:'courses',children:[
     {path:'course/:id',component:CourseDetailComponent},
-    {path:'popular',component:PopularComponent}
+    {path:'popular',component:PopularComponent},
   ]},
+      {path:'login',component:LoginComponent},
   { path: '**', component: NotfoundComponent } // fallback route
 ];
 
