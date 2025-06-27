@@ -18,7 +18,7 @@ import { canActivate, canActivateChild } from './auth.guard';
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent,canDeactivate:[(comp:ContactComponent)=>{return comp.canExit()}] },
-  { path: 'courses', component: CoursesComponent },
+  { path: 'courses', component: CoursesComponent, resolve:{courses:AuthGuardService} },
   // { path: 'courses/course/:id', component: CourseDetailComponent },
   {path:'courses',canActivateChild:[canActivateChild],children:[
     {path:'course/:id',component:CourseDetailComponent},
