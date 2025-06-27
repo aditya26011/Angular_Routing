@@ -8,6 +8,8 @@ import { NotfoundComponent } from './notfound/notfound.component';
 import { CourseDetailComponent } from './courses/course-detail/course-detail.component';
 import { PopularComponent } from './home/popular/popular.component';
 import { LoginComponent } from './login/login.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { AuthGuardService } from './Services/authguard.service';
 
   const routes: Routes = [
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -20,6 +22,7 @@ import { LoginComponent } from './login/login.component';
   {path:'courses',children:[
     {path:'course/:id',component:CourseDetailComponent},
     {path:'popular',component:PopularComponent},
+    {path:'checkout',component:CheckoutComponent,canActivate:[AuthGuardService]}
   ]},
       {path:'login',component:LoginComponent},
   { path: '**', component: NotfoundComponent } // fallback route
