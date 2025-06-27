@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-checkout',
@@ -8,12 +8,15 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CheckoutComponent {
 activateRoute:ActivatedRoute=inject(ActivatedRoute);
+router:Router=inject(Router);
 course;
 
 ngOnInit(){
-  this.activateRoute.data.subscribe((data)=>{
-    this.course=data
-  })
+  // this.activateRoute.data.subscribe((data)=>{
+  //   this.course=data
+  // })
+
+  this.course=history.state;
 }
 
 }
