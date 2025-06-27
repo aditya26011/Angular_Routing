@@ -20,7 +20,7 @@ import { canActivate } from './auth.guard';
   { path: 'contact', component: ContactComponent },
   { path: 'courses', component: CoursesComponent },
   // { path: 'courses/course/:id', component: CourseDetailComponent },
-  {path:'courses',children:[
+  {path:'courses',canActivateChild:[AuthGuardService],children:[
     {path:'course/:id',component:CourseDetailComponent},
     {path:'popular',component:PopularComponent},
     {path:'checkout',component:CheckoutComponent,canActivate:[canActivate]}
