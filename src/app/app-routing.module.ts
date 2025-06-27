@@ -23,7 +23,7 @@ import { canActivate, canActivateChild, resolve } from './auth.guard';
   {path:'courses',canActivateChild:[canActivateChild],children:[
     {path:'course/:id',component:CourseDetailComponent},
     {path:'popular',component:PopularComponent},
-    {path:'checkout',component:CheckoutComponent,canActivate:[canActivate]}
+    {path:'checkout',component:CheckoutComponent,canActivate:[canActivate],data:{name:'Test',price:233}}
   ]},
       {path:'login',component:LoginComponent},
   { path: '**', component: NotfoundComponent } // fallback route
