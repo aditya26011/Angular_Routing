@@ -10,7 +10,7 @@ import { PopularComponent } from './home/popular/popular.component';
 import { LoginComponent } from './login/login.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { AuthGuardService } from './Services/authguard.service';
-import { canActivate, canActivateChild } from './auth.guard';
+import { canActivate, canActivateChild, resolve } from './auth.guard';
 
   const routes: Routes = [
   // { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -18,7 +18,7 @@ import { canActivate, canActivateChild } from './auth.guard';
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'contact', component: ContactComponent,canDeactivate:[(comp:ContactComponent)=>{return comp.canExit()}] },
-  { path: 'courses', component: CoursesComponent, resolve:{courses:AuthGuardService} },
+  { path: 'courses', component: CoursesComponent, resolve:{courses:resolve} },
   // { path: 'courses/course/:id', component: CourseDetailComponent },
   {path:'courses',canActivateChild:[canActivateChild],children:[
     {path:'course/:id',component:CourseDetailComponent},

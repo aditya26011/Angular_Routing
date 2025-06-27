@@ -1,6 +1,7 @@
 import { inject } from "@angular/core";
 import { AuthService } from "./Services/auth.service";
 import { Router } from "@angular/router";
+import { CourseService } from "./Services/course.service";
 
 export const canActivate=()=>{
 const authService=inject(AuthService);
@@ -18,4 +19,11 @@ if(authService.IsAuthenticated()){
 
 export const canActivateChild=()=>{
     canActivate();
+}
+
+export const resolve=()=>{
+    const coursesrvice=inject(CourseService)
+
+          return coursesrvice.getAllcourses();
+
 }
