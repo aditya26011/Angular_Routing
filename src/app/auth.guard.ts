@@ -14,3 +14,8 @@ if(authService.IsAuthenticated()){
     return false;
  }
 }
+
+
+export const canActivateChild=()=>{
+    canActivate();
+}

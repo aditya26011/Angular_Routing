@@ -21,6 +21,7 @@ import { PopularComponent } from './home/popular/popular.component';
 import { AppRoutingModule } from './app-routing.module';
 import { CourseService } from './Services/course.service';
 import { ServicesService } from './Services/services';
+import { FormsModule } from '@angular/forms';
 
 //Define Routes
 // const routes:Routes=[
@@ -54,7 +55,8 @@ import { ServicesService } from './Services/services';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [ServicesService,CourseService],
   bootstrap: [AppComponent]
